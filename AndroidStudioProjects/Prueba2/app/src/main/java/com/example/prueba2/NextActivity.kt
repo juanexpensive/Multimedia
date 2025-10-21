@@ -3,6 +3,7 @@ package com.example.prueba2
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
@@ -44,5 +45,35 @@ class NextActivity : AppCompatActivity() {
             val shareIntent = Intent(Intent.ACTION_SEND)
             startActivity(Intent.createChooser(shareIntent, "Compartir con"))
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("onStart(2)", " llamado")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("onResume(2) llamado", "¡La Activity es visible y activa!")
+        getString(R.string.toast_actividad_b)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("onPause(2) llamado", "Otra Activity toma el foco")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("onStop(2) llamado", " La Activity ya no es visible")
+    }
+
+    override fun onRestart() {
+        super.onDestroy()
+        Log.d("onRestart(2) llamado ", "Volviendo de estar 'stopped")
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("onDestroy(2) llamado", "La Activity está siendo destruida")
     }
 }
