@@ -5,55 +5,46 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.boletin1.ui.theme.Boletin1Theme
 
-class boletin1_6 : ComponentActivity() {
+class boletin1_7 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Boletin1Theme {
-
+                }
             }
         }
-    }
-}
-
 @Composable
-fun ejercicio6() {
+fun Ejercicio7() {
     Column {
-        var numero by remember { mutableStateOf(0) }
-        Text(text = numero.toString())
-        if (numero == 10)
-            Text(text = "Maximo alcanzado!")
+        var size by remember { mutableStateOf(20) }
+        Text("Texto ajustable", fontSize = size.sp)
         Button(onClick = {
-            if (numero == 10)
-                numero = 10
-            else
-                numero++
+            size = size+10
         }) {
-            Text("+")
+            Text("Aumentar tamaño")
         }
         Button(onClick = {
-            if (numero == 0)
-                numero = 0
-            else
-                numero--
+            size= size-10
         }) {
-            Text("-")
+            Text("Disminuir tamaño")
         }
-        Button(onClick = {
-            numero = 0
-        }) {
-            Text("Reset")
-        }
-
     }
 }
+
+
+

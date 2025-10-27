@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Boletin1">
         <activity
+            android:name=".boletin1_8"
+            android:exported="false"
+            android:label="@string/title_activity_boletin18"
+            android:theme="@style/Theme.Boletin1" />
+        <activity
+            android:name=".boletin1_7"
+            android:exported="false"
+            android:label="@string/title_activity_boletin17"
+            android:theme="@style/Theme.Boletin1" />
+        <activity
             android:name=".ui.theme.boletin1_6"
             android:exported="false"
             android:label="@string/title_activity_boletin16"
