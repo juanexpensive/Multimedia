@@ -25,5 +25,5 @@ class boletin1_8 : ComponentActivity() {
     }
 @Composable
 fun ejercicio8 {
-    
+
 }
